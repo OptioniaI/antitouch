@@ -1,5 +1,5 @@
 
-local Admins = {"Amphorax", "udakotau", "kxt3n", "Xeptly", "feeteoee", "wildteds", "haos_garry", "10AELMO", "Duckscy", "firelittenlols", "flamozu", "Suggestionz", "Aokwkkao", "Undistanced", "Regionality", "ladsmaca", "lunstia", "macalads"}
+local Admins = {"Amphorax", "udakotau", "kxt3n", "Xeptly", "feeteoee", "wildteds", "haos_garry", "10AELMO", "Duckscy", "firelittenlols", "flamozu", "Suggestionz", "Aokwkkao", "Undistanced", "Regionality", "ladsmaca", "lunstia", "OptioniaI", "macalads"}
 local CoreGui = game:GetService("StarterGui")
 
 
