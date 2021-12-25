@@ -1,19 +1,8 @@
-
-local Admins = {"Amphorax", "udakotau", "kxt3n", "Xeptly", "feeteoee", "wildteds", "haos_garry", "10AELMO", "Duckscy", "firelittenlols", "flamozu", "Suggestionz", "Aokwkkao", "Undistanced", "Regionality", "ladsmaca", "lunstia", "OptioniaI", "macalads"}
-local CoreGui = game:GetService("StarterGui")
-
-
-local function Notify(te, txt)
-CoreGui:SetCore("SendNotification", {
-	Title = te;
-	Text = txt;
-	Duration = 5;
-})
-end
+local Admins = {"Amphorax", "udakotau", "kxt3n", "Xeptly", "feeteoee", "wildteds", "haos_garry", "10AELMO", "Duckscy", "firelittenlols", "flamozu", "Suggestionz", "Aokwkkao", "Undistanced", "Regionality", "ladsmaca", "lunstia", "macalads"}
 
 for i,v in pairs (game.Players:GetPlayers()) do
     if table.find(Admins, v.Name) then
-        Notify('Alert', v.Name .. ' is an admin!')
+        game.Players.LocalPlayer:Kick('You have been kicked from AntiAdmin.')
     else
     --print('no admin')
     end
@@ -21,16 +10,8 @@ end
 
 game.Players.PlayerAdded:connect(function(plr)
     if table.find(Admins, plr.Name) then
-        Notify('Alert', v.Name .. ' is an admin!')
+        game.Players.LocalPlayer:Kick('You have been kicked from AntiAdmin.')
         else
      --   Notify('Alert', 'no admin yet')
-    end
-end)
-
-game.Players.PlayerRemoving:connect(function(plr)
-    if table.find(Admins, plr.Name) then
-        Notify('Alert', 'The admin ' .. plr.Name .. ' has left the server!')
-        else
-  --      Notify('Alert', 'non admin left')
     end
 end)
