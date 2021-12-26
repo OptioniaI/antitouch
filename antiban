@@ -2,7 +2,7 @@ local Admins = {"Amphorax", "udakotau", "kxt3n", "Xeptly", "feeteoee", "wildteds
 
 for i,v in pairs (game.Players:GetPlayers()) do
     if table.find(Admins, v.Name) then
-        game.Players.LocalPlayer:Kick('You have been kicked from AntiAdmin.')
+        game.Players.LocalPlayer:Kick('You have been kicked from AntiBan.')
     else
     --print('no admin')
     end
@@ -10,7 +10,7 @@ end
 
 game.Players.PlayerAdded:connect(function(plr)
     if table.find(Admins, plr.Name) then
-        game.Players.LocalPlayer:Kick('You have been kicked from AntiAdmin.')
+        game.Players.LocalPlayer:Kick('You have been kicked from AntiBan.')
         else
      --   Notify('Alert', 'no admin yet')
     end
