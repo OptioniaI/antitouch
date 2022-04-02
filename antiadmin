@@ -1,17 +1,22 @@
-local Admins = {"Amphorax", "udakotau", "kxt3n", "Xeptly", "feeteoee", "wildteds", "haos_garry", "10AELMO", "Duckscy", "firelittenlols", "flamozu", "Suggestionz", "Aokwkkao", "Undistanced", "Regionality", "ladsmaca", "lunstia", "GodedElmo", "1PinkyGod", "macalads"}
+local plr = game.Players.LocalPlayer
+local grp = plr:GetRankInGroup(7548958)
 
-for i,v in pairs (game.Players:GetPlayers()) do
-    if table.find(Admins, v.Name) then
-        game.Players.LocalPlayer:Kick('You have been kicked from AntiBan.')
-    else
-    --print('no admin')
-    end
-end
+local Players = game:GetService("Players")
+game.Players.PlayerAdded:Connect(function(player)
 
-game.Players.PlayerAdded:connect(function(plr)
-    if table.find(Admins, plr.Name) then
-        game.Players.LocalPlayer:Kick('You have been kicked from AntiBan.')
-        else
-     --   Notify('Alert', 'no admin yet')
+    if player:IsInGroup(7548958) then
+
+    plr:Kick("Staff Joined! Finding a new server..")
+    local x = {}
+	for _, v in ipairs(game:GetService("HttpService"):JSONDecode(game:HttpGetAsync("https://games.roblox.com/v1/games/" .. game.PlaceId .. "/servers/Public?sortOrder=Asc&limit=100")).data) do
+		if type(v) == "table" and v.maxPlayers > v.playing and v.id ~= game.JobId then
+			x[#x + 1] = v.id
+		end
+	end
+	if #x > 0 then
+		game:GetService("TeleportService"):TeleportToPlaceInstance(game.PlaceId, x[math.random(1, #x)])
+	else
+		print("Couldn't find a server!")
+	end    
     end
 end)
